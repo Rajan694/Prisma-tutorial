@@ -7,6 +7,21 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://rajan:1234@localhost:5432/prisma-tutorial"
+  url      = env("DATABASE_URL")
 }
+
+model User {
+  id    Int    @id @default(autoincrement())
+  email String @unique
+  name String?
+  articles Article[]
+  }
+
+model Article {
+  id    Int    @id @default(autoincrement())
+  title String
+  body  String?
+  author User @relation(fields: [authorId], references: [id])   //making relation
+  authorId Int
+  }
 

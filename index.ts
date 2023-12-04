@@ -21,7 +21,7 @@ async function main() {
   // });
   // console.log(allUsers);
   // allUsers.forEach((user) => {
-  //   console.log(user.name);
+  //   console.log(user.name, user.email);
   //   console.log(user.articles.map((article) => article.title));
   // });
   //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -80,12 +80,12 @@ async function main() {
   // console.log(updateduser);
   //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
   //delete data
-  const deletedarticle = await prisma.article.delete({
-    where: {
-      id: 3,
-    },
-  });
-  console.log(deletedarticle);
+  // const deletedarticle = await prisma.article.delete({
+  //   where: {
+  //     id: 3,
+  //   },
+  // });
+  // console.log(deletedarticle);
 }
 
 main()
